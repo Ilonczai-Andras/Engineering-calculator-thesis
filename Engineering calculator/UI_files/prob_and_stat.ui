@@ -6,17 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1397</width>
+    <height>1141</height>
    </rect>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>800</width>
-    <height>600</height>
-   </size>
-  </property>
-  <property name="maximumSize">
    <size>
     <width>800</width>
     <height>600</height>
@@ -28,193 +22,378 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #2E2E2E;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>271</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>Valószinűség</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Várható érték</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Entrópia</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Variancia</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Sűrűség függvény</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>781</width>
-      <height>300</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Erdemény</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>40</y>
-      <width>75</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Enter</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>40</y>
-      <width>281</width>
-      <height>100</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>271</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>Normál</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Geometriai</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Poisson</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Logaritmikus</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Erlang</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Pareto</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>271</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Eloszlás:</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="mu">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>40</y>
-      <width>104</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="placeholderText">
-     <string>mu</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="sigma">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>96</y>
-      <width>104</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="placeholderText">
-     <string>sigma</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">        QWidget#centralwidget {
+            background-color: #2E2E2E;
+        }</string>
    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,3,5">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+            background-color: #4E4E4E;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        QComboBox#comboBox {
+        font-family: 'Courier New', Courier, monospace;
+        width: 330px;
+        }
+QComboBox QAbstractItemView {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #4E4E4E;
+            selection-background-color: #5E5E5E;
+            color: #FFFFFF;
+        }</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Probability</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Expected value</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Entropy</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Variancia</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Density function</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>T test</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>U test</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QLabel {
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+        }</string>
+            </property>
+            <property name="text">
+             <string>Distribution:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Courier New</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+            background-color: #4E4E4E;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        QComboBox#comboBox {
+        font-family: 'Courier New', Courier, monospace;
+        width: 330px;
+        }
+QComboBox QAbstractItemView {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #4E4E4E;
+            selection-background-color: #5E5E5E;
+            color: #FFFFFF;
+        }</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Normal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Geometriai</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Poisson</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Logaritmikus</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Erlang</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pareto</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QTextEdit" name="mu">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QTextEdit{
+            background-color: #1C1C1C;
+            font-size: 14pt;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }</string>
+            </property>
+            <property name="placeholderText">
+             <string>μ</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="alpha">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QTextEdit{
+            background-color: #1C1C1C;
+            font-size: 14pt;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }</string>
+            </property>
+            <property name="placeholderText">
+             <string>alpha</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="sigma">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QTextEdit{
+            background-color: #1C1C1C;
+            font-size: 14pt;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }</string>
+            </property>
+            <property name="placeholderText">
+             <string>σ2</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QTextEdit" name="lineEdit_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QTextEdit{
+            background-color: #1C1C1C;
+            font-size: 14pt;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">        QPushButton {
+            background-color: #1C1C1C;
+            font-size: 10pt;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        QPushButton:hover {
+            background-color: #5E5E5E;
+        }
+        QComboBox QAbstractItemView {
+            background-color: #4E4E4E;
+            selection-background-color: #5E5E5E;
+            color: #FFFFFF;
+        }
+        QPushButton:pressed {
+            background-color: #6E6E6E;
+        }</string>
+            </property>
+            <property name="text">
+             <string>Enter</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Courier New</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">        QLabel {
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+        }</string>
+        </property>
+        <property name="text">
+         <string>Result</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="canvaswidget" native="true"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

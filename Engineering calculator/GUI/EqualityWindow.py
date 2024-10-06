@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QComboBox, QToolBar
 from PyQt5 import QtCore
 from PyQt5.QtGui import QFont
 import sys
-from Helper_class_Plotting import Canvas
+from Helpers.Helper_class_Plotting import Canvas
 import UI_files.Equality_GUI as Equality_GUI
 from sympy import (
     Or,
@@ -27,35 +27,19 @@ class Window(QMainWindow, Equality_GUI.Ui_Egyenlet):
         super().__init__()
         self.setupUi(self)
 
-        # Create the toolbar
-        self.toolBar = QToolBar("My Toolbar")
-        self.toolBar.setMovable(False)
-        self.toolBar.setMaximumSize(290, 51)
-        self.addToolBar(self.toolBar)  # Adds the toolbar to the main window
-
+        # Create and add the canvas
         self.canvas = Canvas(self.centralwidget)
-        self.canvas.setGeometry(QtCore.QRect(9, 210, 780, 341))
+
+        layout = self.canvaswidget.layout()
+        if layout is None:
+            from PyQt5.QtWidgets import QVBoxLayout
+
+            layout = QVBoxLayout(self.canvaswidget)
+            self.canvaswidget.setLayout(layout)
+
+        layout.addWidget(self.canvas)
 
         self.pushButton.clicked.connect(lambda: self.combobox_selector())
-
-        # Create the combo box
-        font = QFont()
-        font.setPointSize(12)  # Set the desired font size
-        self.combo = QComboBox()
-        self.combo.setFont(font)
-        self.combo.addItems(
-            [
-                "Basic",
-                "Calculus",
-                "Equations",
-                "Differential Calculation",
-                "Probability and Statistics",
-                "Programmer Calculator",
-            ]
-        )
-
-        # Add the combo box to the toolbar
-        self.toolBar.addWidget(self.combo)
 
         common_area = []
 
@@ -248,42 +232,52 @@ class Window(QMainWindow, Equality_GUI.Ui_Egyenlet):
 
         if input_text == "Equation":
             print("#LOG Equation")
+            lhs = rhs = None  # Initialize lhs and rhs to None
             try:
                 self.canvas.show()
                 if len(number_of_rows) == 2:
                     self.common_area = []
+
+                    for ineq in inequality:
+                        if ineq in function_text:
+                            lhs, rhs = function_text.split(ineq)
+                            break
+
                     self.one_func(
                         function_text,
                         self.replace_trigonometric_funcs(function_text).replace(
                             "sqrt", ""
                         ),
                     )
-                    for ineq in inequality:
-                        if ineq in function_text:
-                            self.canvas.clear((-10, 10), (-10, 10))
-                            self.canvas.plotted_functions = []
-                            lhs, rhs = function_text.split(ineq)
-                            self.canvas.plot_function(
-                                lhs, (-10, 10), (-10, 10), clear=False
-                            )
-                            self.canvas.store_function(
-                                lhs, (-10, 10), (-10, 10), None, False, ""
-                            )
-                            self.canvas.plot_function(
-                                rhs, (-10, 10), (-10, 10), clear=False
-                            )
-                            self.canvas.store_function(
-                                rhs, (-10, 10), (-10, 10), None, False, ""
-                            )
-                            break
                 else:
                     self.label_2.setText("Provide a single line")
                     self.text_edit.setText("")
+                    return  # Exit early if there isn't a valid equation
             except Exception as e:
+                print(e)
                 self.label_2.setText(
                     "ERROR: incorrect equation, please provide a new one!"
                 )
-                self.canvas.hide()
+                return  # Exit early in case of an exception
+            finally:
+                # Ensure lhs and rhs are not None before plotting
+                if lhs and rhs:
+                    self.canvas.clear((-10, 10), (-10, 10))
+                    self.canvas.plotted_functions = []
+                    self.canvas.plot_function(
+                        lhs, (-10, 10), (-10, 10), clear=False, Color="red"
+                    )
+                    self.canvas.store_function(
+                        lhs, (-10, 10), (-10, 10), None, False, ""
+                    )
+                    self.canvas.plot_function(
+                        rhs, (-10, 10), (-10, 10), clear=False, Color="blue"
+                    )
+                    self.canvas.store_function(
+                        rhs, (-10, 10), (-10, 10), None, False, ""
+                    )
+                else:
+                    self.label_2.setText("No valid equation to plot.")
         if input_text == "System of Equations":
             print("#LOG System of Equations")
             self.canvas.hide()
@@ -340,16 +334,8 @@ class Window(QMainWindow, Equality_GUI.Ui_Egyenlet):
 
                     self.canvas.plotted_functions = []
                     self.canvas.plot_function(result, (-10, 10), (-10, 10), clear=False)
-                    self.canvas.store_function(
-                        result,
-                        (-10, 10),
-                        (-10, 10),
-                        self.canvas.interval_y,
-                        None,
-                        False,
-                        "",
-                    )
-                except:
+                except Exception as e:
+                    print(e)
                     self.label_2.setText("Invalid function for Fourier series")
                     self.text_edit.setText("")
             else:

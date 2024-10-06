@@ -7,23 +7,43 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>650</height>
+    <height>638</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>800</width>
-    <height>650</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>800</width>
-    <height>650</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Egyenlet</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox {
+            background-color: #4E4E4E;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        QComboBox#comboBox {
+        font-family: 'Courier New', Courier, monospace;
+        width: 330px;
+        }
+QComboBox QAbstractItemView {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #4E4E4E;
+            selection-background-color: #5E5E5E;
+            color: #FFFFFF;
+        }</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -31,120 +51,43 @@
             background-color: #2E2E2E;
         }</string>
    </property>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>291</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Courier New</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QComboBox{
-            background-color: #1C1C1C;
-            color: #FFFFFF;
-            font-size: 14pt;
-            font-family: 'Courier New', Courier, monospace;
-            border: 1px solid #555555;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        QComboBox QAbstractItemView {
-            background-color: #4E4E4E;
-            selection-background-color: #5E5E5E;
-            color: #FFFFFF;
-        }</string>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <property name="text">
-      <string>Equation</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>System of Equations</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Fourier Series</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>781</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel#label_2 {
-            color: #FFFFFF;
-            font-size: 14pt;
-            qproperty-alignment: 'AlignRight | AlignTrailing | AlignVCenter';
-        }</string>
-    </property>
-    <property name="text">
-     <string>Erdemény</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>70</y>
-      <width>75</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-            background-color: #4E4E4E;
-            color: #FFFFFF;
-            border: 1px solid #555555;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        QPushButton:hover {
-            background-color: #5E5E5E;
-        }
-        QPushButton:pressed {
-            background-color: #6E6E6E;
-        }</string>
-    </property>
-    <property name="text">
-     <string>Enter</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="text_edit">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>20</y>
-      <width>391</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QTextEdit#text_edit{
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,2,5">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <item>
+           <property name="text">
+            <string>Equation</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>System of Equations</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Fourier Series</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="text_edit">
+          <property name="styleSheet">
+           <string notr="true">QTextEdit#text_edit{
             background: #1C1C1C;
             color: #FFFFFF;
             font-family: 'Courier New', Courier, monospace;
@@ -159,8 +102,67 @@
             border-radius: 5px;
             padding: 5px;
         }</string>
-    </property>
-   </widget>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+            background-color: #4E4E4E;
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        QPushButton:hover {
+            background-color: #5E5E5E;
+        }
+        QPushButton:pressed {
+            background-color: #6E6E6E;
+        }</string>
+          </property>
+          <property name="text">
+           <string>Enter</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#label_2 {
+            color: #FFFFFF;
+            font-size: 14pt;
+            qproperty-alignment: 'AlignRight | AlignTrailing | AlignVCenter';
+        }</string>
+        </property>
+        <property name="text">
+         <string>Erdemény</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="canvaswidget" native="true"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

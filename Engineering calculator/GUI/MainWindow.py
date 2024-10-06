@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QComboBox, QToolBar
+from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QFont
 import sys
 import UI_files.Main_GUI as Main_GUI
@@ -13,6 +14,9 @@ class Window(
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setFocusPolicy(Qt.StrongFocus)
+        self.outputLabel.setFocus()
+        self.clipboard = QApplication.clipboard()
 
         # A variable to store the current text
         self.text = ""
@@ -21,29 +25,6 @@ class Window(
 
         # Apply the stylesheet
         self.applyStylesheet(self)  # Call applyStylesheet after setting up the UI
-
-        # Create the toolbar
-        self.toolBar = QToolBar("My Toolbar")
-        self.addToolBar(self.toolBar)  # Adds the toolbar to the main window
-
-        # Create the combo box
-        font = QFont()
-        font.setPointSize(12)  # Set the desired font size
-        self.combo = QComboBox()
-        self.combo.setFont(font)
-        self.combo.addItems(
-            [
-                "Basic",
-                "Calculus",
-                "Equations",
-                "Differential Calculation",
-                "Probability and Statistics",
-                "Programmer Calculator",
-            ]
-        )
-
-        # Add the combo box to the toolbar
-        self.toolBar.addWidget(self.combo)
 
         # Connect buttons to their respective functions
         self.plusMinusButton.clicked.connect(lambda: self.plus_minus())
@@ -123,7 +104,8 @@ class Window(
         try:
             answer = eval(screen)
             self.outputLabel.setText(str(answer))
-        except:
+        except Exception as e:
+            print(e)
             self.outputLabel.setText("ERROR")
 
     def quadrat(self):
@@ -200,14 +182,26 @@ class Window(
 
     def keyPressEvent(self, event):
         key = event.key()
+        modifiers = QApplication.keyboardModifiers()
 
-        # If 'Enter' is pressed, call self.equal() method
         if key == Qt.Key_Return or key == Qt.Key_Enter:
             self.equal()
             self.enter_pressed = True  # Set flag to true after pressing Enter
             self.error_displayed = (
                 self.outputLabel.text() == "ERROR"
             )  # Check if ERROR was displayed
+
+        # Handle 'Ctrl+C' 'Ctrl+V'shortcut to save output to clipboard
+
+        elif event.modifiers() & Qt.ControlModifier:
+            if event.key() == Qt.Key_C:
+                print("Ctrl + C")
+                self.save_to_clipboard()
+
+        elif event.modifiers() & Qt.ControlModifier:
+            if event.key() == Qt.Key_V:
+                print("Ctrl + V")
+                self.paste_into_clipboard()
 
         else:
             # If enter was pressed before this key or if ERROR is displayed, clear label and start new input
@@ -226,6 +220,19 @@ class Window(
 
             # Update the label with the current text
             self.outputLabel.setText(self.text)
+
+    # Add this method to the Window class
+    def save_to_clipboard(self):
+        print(self.outputLabel.text())
+        self.clipboard.setText(self.outputLabel.text())
+
+    def paste_into_clipboard(self):
+        clipboard_text = self.clipboard.text()
+        if clipboard_text:
+            if self.outputLabel.text() == "0":
+                self.outputLabel.setText(clipboard_text)
+            else:
+                self.outputLabel.setText(self.outputLabel.text() + clipboard_text)
 
 
 def main():

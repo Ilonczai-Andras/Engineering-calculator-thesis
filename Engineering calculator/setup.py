@@ -16,7 +16,7 @@ build_options = {'packages': [], 'excludes': []}
 base = 'Win32GUI' if sys.platform == 'win32' else None
 
 executables = [
-    Executable('Main.py', base=base, 
+    Executable('EngineeringCalc.py', base=base, 
                target_name='Engineering Calculator', 
                icon=icon_path)
 ]

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>765</width>
-    <height>818</height>
+    <width>530</width>
+    <height>750</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,12 +15,6 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>0</width>
-    <height>0</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -31,6 +25,12 @@
             }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>0</width>
@@ -46,81 +46,92 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QLabel" name="outputLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>747</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Courier New</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">            QLabel#outputLabel {
-                background-color: #1C1C1C;
-                font-size:40px;
-                font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-                color: #FFFFFF;
-                border: 2px solid #555555;
-                border-radius: 5px;
-                padding: 10px;
-            }</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>2</number>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="margin">
-       <number>10</number>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0">
       <property name="spacing">
        <number>6</number>
       </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetNoConstraint</enum>
+      </property>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QPushButton" name="percentageButton">
+         <widget class="QLineEdit" name="outputLabel">
           <property name="minimumSize">
            <size>
-            <width>181</width>
-            <height>0</height>
+            <width>0</width>
+            <height>80</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>'Courier New'</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="toolTipDuration">
+           <number>10</number>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+               background-color: #1C1C1C;
+               font-size:40px;
+            font-family: \'Courier New\', Courier, monospace; /* Monospaced font */
+             color: #FFFFFF;\n
+                border: 2px solid #555555;
+                border-radius: 5px;
+                padding: 10px;</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>26</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">            QPushButton {
+                background-color: #4E4E4E;
+                font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+                color: #FFFFFF;
+                border: 1px solid #555555;
+                border-radius: 10px;
+                padding: 10px;
+            }</string>
+          </property>
+          <property name="text">
+           <string>DEL</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="percentageButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -145,11 +156,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="clearButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>68</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -172,75 +183,20 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="deleteButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>26</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">            QPushButton {
-                background-color: #4E4E4E;
-                font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-                color: #FFFFFF;
-                border: 1px solid #555555;
-                border-radius: 10px;
-                padding: 10px;
-            }</string>
-          </property>
-          <property name="text">
-           <string>DEL</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QPushButton" name="onePerXButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Courier New</family>
-            <pointsize>26</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">            QPushButton {
-                background-color: #4E4E4E;
-                font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-                color: #FFFFFF;
-                border: 1px solid #555555;
-                border-radius: 10px;
-                padding: 10px;
-            }</string>
-          </property>
-          <property name="text">
-           <string>1/x</string>
-          </property>
-         </widget>
-        </item>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="quadratButton">
-          <property name="minimumSize">
-           <size>
-            <width>182</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -264,12 +220,41 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="onePerXButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Courier New</family>
+            <pointsize>26</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">            QPushButton {
+                background-color: #4E4E4E;
+                font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+                color: #FFFFFF;
+                border: 1px solid #555555;
+                border-radius: 10px;
+                padding: 10px;
+            }</string>
+          </property>
+          <property name="text">
+           <string>1/x</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="sqrtButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -294,6 +279,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="divideButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -319,13 +310,16 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="Button_7">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -351,11 +345,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_8">
-          <property name="minimumSize">
-           <size>
-            <width>182</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -381,11 +375,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_9">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -411,6 +405,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="multiplyButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -436,13 +436,16 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="Button_4">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -468,11 +471,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_5">
-          <property name="minimumSize">
-           <size>
-            <width>182</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -498,11 +501,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_6">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -528,6 +531,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="minusButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -553,13 +562,16 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="Button_1">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -585,11 +597,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_2">
-          <property name="minimumSize">
-           <size>
-            <width>182</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -615,11 +627,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="Button_3">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -645,6 +657,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="plusButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <family>Courier New</family>
@@ -669,14 +687,17 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="plusMinusButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -701,11 +722,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="zeroButton">
-          <property name="minimumSize">
-           <size>
-            <width>182</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -731,11 +752,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="decimalPointButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>0</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>
@@ -760,11 +781,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="equalButton">
-          <property name="minimumSize">
-           <size>
-            <width>181</width>
-            <height>68</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="font">
            <font>

@@ -6,4 +6,7 @@ __pycache__/
 .tmp
 
 Engineering calculator/UI_files/__init__.py
-Engineering calculator/UI_files/calculus.ui
+Engineering calculator/Helpers/__init__.py
+Engineering calculator/GUI/__init__.py
+
+calculator_config.ini

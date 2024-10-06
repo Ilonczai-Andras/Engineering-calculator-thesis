@@ -14,68 +14,51 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Egyenlet(object):
     def setupUi(self, Egyenlet):
         Egyenlet.setObjectName("Egyenlet")
-        Egyenlet.resize(800, 650)
-        Egyenlet.setMinimumSize(QtCore.QSize(800, 650))
-        Egyenlet.setMaximumSize(QtCore.QSize(800, 650))
+        Egyenlet.resize(800, 638)
+        Egyenlet.setMinimumSize(QtCore.QSize(800, 600))
+        Egyenlet.setStyleSheet("QComboBox {\n"
+"            background-color: #4E4E4E;\n"
+"            font-family: \'Courier New\', Courier, monospace;\n"
+"            color: #FFFFFF;\n"
+"            border: 1px solid #555555;\n"
+"            border-radius: 5px;\n"
+"            padding: 5px;\n"
+"        }\n"
+"        QComboBox#comboBox {\n"
+"        font-family: \'Courier New\', Courier, monospace;\n"
+"        width: 330px;\n"
+"        }\n"
+"QComboBox QAbstractItemView {\n"
+"            font-family: \'Courier New\', Courier, monospace;\n"
+"            background-color: #4E4E4E;\n"
+"            selection-background-color: #5E5E5E;\n"
+"            color: #FFFFFF;\n"
+"        }")
+        Egyenlet.setAnimated(True)
+        Egyenlet.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(Egyenlet)
         self.centralwidget.setStyleSheet("        QWidget#centralwidget {\n"
 "            background-color: #2E2E2E;\n"
 "        }")
         self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(10, 70, 291, 51))
         font = QtGui.QFont()
         font.setFamily("Courier New")
         font.setPointSize(14)
         self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("QComboBox{\n"
-"            background-color: #1C1C1C;\n"
-"            color: #FFFFFF;\n"
-"            font-size: 14pt;\n"
-"            font-family: \'Courier New\', Courier, monospace;\n"
-"            border: 1px solid #555555;\n"
-"            border-radius: 5px;\n"
-"            padding: 5px;\n"
-"        }\n"
-"        QComboBox QAbstractItemView {\n"
-"            background-color: #4E4E4E;\n"
-"            selection-background-color: #5E5E5E;\n"
-"            color: #FFFFFF;\n"
-"        }")
+        self.comboBox.setStyleSheet("")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(10, 130, 781, 71))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("QLabel#label_2 {\n"
-"            color: #FFFFFF;\n"
-"            font-size: 14pt;\n"
-"            qproperty-alignment: \'AlignRight | AlignTrailing | AlignVCenter\';\n"
-"        }")
-        self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_2.setObjectName("label_2")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(710, 70, 75, 51))
-        self.pushButton.setStyleSheet("QPushButton {\n"
-"            background-color: #4E4E4E;\n"
-"            color: #FFFFFF;\n"
-"            border: 1px solid #555555;\n"
-"            border-radius: 10px;\n"
-"            padding: 10px;\n"
-"        }\n"
-"        QPushButton:hover {\n"
-"            background-color: #5E5E5E;\n"
-"        }\n"
-"        QPushButton:pressed {\n"
-"            background-color: #6E6E6E;\n"
-"        }")
-        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.comboBox)
         self.text_edit = QtWidgets.QTextEdit(self.centralwidget)
-        self.text_edit.setGeometry(QtCore.QRect(310, 20, 391, 102))
         self.text_edit.setStyleSheet("QTextEdit#text_edit{\n"
 "            background: #1C1C1C;\n"
 "            color: #FFFFFF;\n"
@@ -92,6 +75,51 @@ class Ui_Egyenlet(object):
 "            padding: 5px;\n"
 "        }")
         self.text_edit.setObjectName("text_edit")
+        self.horizontalLayout.addWidget(self.text_edit)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"            background-color: #4E4E4E;\n"
+"            color: #FFFFFF;\n"
+"            border: 1px solid #555555;\n"
+"            border-radius: 10px;\n"
+"            padding: 10px;\n"
+"        }\n"
+"        QPushButton:hover {\n"
+"            background-color: #5E5E5E;\n"
+"        }\n"
+"        QPushButton:pressed {\n"
+"            background-color: #6E6E6E;\n"
+"        }")
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.setStretch(0, 2)
+        self.horizontalLayout.setStretch(1, 2)
+        self.horizontalLayout.setStretch(2, 1)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("QLabel#label_2 {\n"
+"            color: #FFFFFF;\n"
+"            font-size: 14pt;\n"
+"            qproperty-alignment: \'AlignRight | AlignTrailing | AlignVCenter\';\n"
+"        }")
+        self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
+        self.canvaswidget = QtWidgets.QWidget(self.centralwidget)
+        self.canvaswidget.setObjectName("canvaswidget")
+        self.verticalLayout.addWidget(self.canvaswidget)
+        self.verticalLayout.setStretch(0, 1)
+        self.verticalLayout.setStretch(1, 2)
+        self.verticalLayout.setStretch(2, 5)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
         Egyenlet.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Egyenlet)
@@ -103,8 +131,8 @@ class Ui_Egyenlet(object):
         self.comboBox.setItemText(0, _translate("Egyenlet", "Equation"))
         self.comboBox.setItemText(1, _translate("Egyenlet", "System of Equations"))
         self.comboBox.setItemText(2, _translate("Egyenlet", "Fourier Series"))
-        self.label_2.setText(_translate("Egyenlet", "Erdemény"))
         self.pushButton.setText(_translate("Egyenlet", "Enter"))
+        self.label_2.setText(_translate("Egyenlet", "Erdemény"))
 
 
 if __name__ == "__main__":
